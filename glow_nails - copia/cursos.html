@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cursos</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .header {
+            background-color: pink;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h2 {
+            margin: 0;
+        }
+
+        .redes {
+            font-size: 14px;
+        }
+
+        
+        .catalogo {
+            background-color: white;
+            padding: 60px 40px;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+
+      
+        .cursos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .curso {
+            background-color: #fff5f8;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .curso:hover {
+            transform: scale(1.05);
+        }
+
+        .curso img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .curso h3 {
+            margin: 15px 0 10px 0;
+        }
+
+        .precio {
+            font-weight: bold;
+            color: #ff1493;
+        }
+        .menu {
+    background-color: pink;
+    padding: 15px;
+    text-align: center;
+}
+.abajo {
+    background-color: pink;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.menu-centro {
+    display: flex;
+    gap: 30px;
+}
+
+.menu-centro a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.menu-centro a:hover {
+    color: white;
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+    </style>
+</head>
+
+<body>
+
+   <div class="menu">
+<a href="index..html">Inicio</a>
+<a href="cursos.html">Cursos</a>
+<a href="tienda.html">Tienda</a>
+<a href="contacto.html">Contacto</a>
+   </div>
+
+    <div class="header">
+        <h2>Mis Cursos </h2>
+        <div class="redes">
+            Instagram: @glownails.byeve | WhatsApp: 301 269 52 25
+        </div>
+    </div>
+
+    <div class="catalogo">
+
+        <div class="titulo">Te enseño mis mejores tecnicas y aprende desde cero</div>
+
+        <div class="cursos-grid">
+
+            <div class="curso">
+                <img src="uñas 3.jpeg" alt="Curso básico">
+                <h3>Curso Básico</h3>
+                <div class="precio">$120.000</div>
+            </div>
+
+            <div class="curso">
+                <img src="uñas 4.jpeg" alt="Curso avanzado">
+                <h3>Curso Avanzado</h3>
+                <div class="precio">$180.000</div>
+            </div>
+
+            <div class="curso">
+                <img src="uñas2.jpeg" alt="Decoración profesional">
+                <h3>Decoración Profesional</h3>
+                <div class="precio">$150.000</div>
+
+
+
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
