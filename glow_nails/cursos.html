@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cursos</title>
+
+<style>
+
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff5f8;
+}
+
+/* MENU CENTRADO */
+.menu{
+    background-color: pink;
+    padding: 15px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.logo{
+    font-weight: bold;
+}
+
+/* LINKS */
+.links{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.links a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    background: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.links a:hover{
+    background: #ff69b4;
+    color: white;
+}
+
+/* LOGIN AREA */
+.login-area{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* caja usuario (FIX IMPORTANTE) */
+.user-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* nombre usuario */
+.usuario{
+    font-weight: bold;
+    color: #b30059;
+    white-space: nowrap;
+}
+
+/* logout */
+.logout-btn{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.logout-btn:hover{
+    color: #ff1493;
+}
+
+/* login button */
+.login-btn{
+    background: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* CURSOS */
+.cursos-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+}
+
+.curso{
+    background-color: #f8cdda;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.curso:hover{
+    transform: scale(1.05);
+}
+
+.curso img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* MODAL CURSOS */
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido{
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 420px;
+    position: relative;
+}
+
+.cerrar{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+/* BOTÓN TIENDA */
+.boton-tienda{
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg,#ff69b4,#ff1493);
+    color: white;
+    font-weight: bold;
+}
+
+/* LOGIN MODAL */
+.modal-login{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box{
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+}
+
+.login-box input{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.login-box button{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    background: pink;
+    font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="menu">
+
+    <div class="logo">💅 Glow Nails</div>
+
+    <div class="links">
+        <a href="index.html">Inicio</a>
+        <a href="cursos.html">Cursos</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+
+    <div id="loginArea" class="login-area"></div>
+
+</div>
+
+<!-- CURSOS -->
+<div class="cursos-grid">
+
+    <div class="curso" onclick="abrirCurso('basico')">
+        <img src="uñas 3.jpeg">
+        <h3>Curso Básico</h3>
+    </div>
+
+    <div class="curso" onclick="abrirCurso('avanzado')">
+        <img src="uñas 4.jpeg">
+        <h3>Curso Avanzado</h3>
+    </div>
+
+    <div class="curso" onclick="abrirCurso('decoracion')">
+        <img src="uñas2.jpeg">
+        <h3>Decoración Profesional</h3>
+    </div>
+
+</div>
+
+<!-- MODAL CURSO -->
+<div class="modal" id="modal">
+
+    <div class="modal-contenido">
+
+        <span class="cerrar" onclick="cerrarModal()">✕</span>
+
+        <h2 id="tituloCurso"></h2>
+        <p id="descripcionCurso"></p>
+
+        <button class="boton-tienda" onclick="irATienda()">
+            IR A TIENDA
+        </button>
+
+    </div>
+
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-login" id="modalLogin">
+
+    <div class="login-box">
+
+        <h3>Iniciar sesión</h3>
+
+        <input id="user" placeholder="Usuario">
+        <input id="pass" type="password" placeholder="Contraseña">
+
+        <button onclick="login()">Entrar</button>
+        <button onclick="register()">Registrarse</button>
+
+        <span class="cerrar" onclick="cerrarLogin()">✕</span>
+
+    </div>
+
+</div>
+
+<script>
+
+/* LOGIN MODAL */
+function abrirLogin(){
+    document.getElementById("modalLogin").style.display = "flex";
+}
+
+function cerrarLogin(){
+    document.getElementById("modalLogin").style.display = "none";
+}
+
+/* REGISTRO */
+function register(){
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    localStorage.setItem("user_" + u, p);
+    alert("Cuenta creada 💖");
+}
+
+/* LOGIN */
+function login(){
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    let saved = localStorage.getItem("user_" + u);
+
+    if(saved === p){
+        localStorage.setItem("loggedUser", u);
+        cerrarLogin();
+        actualizarLogin();
+    } else {
+        alert("Datos incorrectos");
+    }
+}
+
+/* LOGIN PERSISTENTE */
+function actualizarLogin(){
+
+    let u = localStorage.getItem("loggedUser");
+    let box = document.getElementById("loginArea");
+
+    if(u){
+        box.innerHTML = `
+            <div class="user-box">
+                <span class="usuario">💖 ${u}</span>
+                <button class="logout-btn" onclick="logout()">✕ Salir</button>
+            </div>
+        `;
+    } else {
+        box.innerHTML = `
+            <button class="login-btn" onclick="abrirLogin()">Iniciar sesión</button>
+        `;
+    }
+}
+
+function logout(){
+    localStorage.removeItem("loggedUser");
+    actualizarLogin();
+}
+
+window.onload = actualizarLogin;
+
+/* CURSOS */
+function abrirCurso(tipo){
+
+    document.getElementById("modal").style.display = "flex";
+
+    if(tipo === "basico"){
+        document.getElementById("tituloCurso").innerText = "Curso Básico 💅";
+        document.getElementById("descripcionCurso").innerText = "Aprende lo basico de uñas, lo tenemos en nuestra tienda y es gratuito";
+    }
+
+    if(tipo === "avanzado"){
+        document.getElementById("tituloCurso").innerText = "Curso Avanzado ✨";
+        document.getElementById("descripcionCurso").innerText = "Aprende de uñas soft gel y puede ser desde la comodidad de tu casa, los materiales y lo que se aprende puedes preguntarnos en nuestras redes sociales, ubicadas en contacto.";
+    }
+
+    if(tipo === "decoracion"){
+        document.getElementById("tituloCurso").innerText = "Decoración 🎨";
+        document.getElementById("descripcionCurso").innerText = "Aprende basico de uñas que es decorar un poco mas avanzado como encapsulados y demás";
+    }
+}
+
+function cerrarModal(){
+    document.getElementById("modal").style.display = "none";
+}
+
+function irATienda(){
+    window.location.href = "tienda.html";
+}
+
+</script>
+
+</body>
+</html>
