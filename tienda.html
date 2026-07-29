@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Nails</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        body{
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff5f8;
+        }
+
+        /* MENU */
+        .abajo{
+            background-color: pink;
+            display: flex;
+            align-items: center;
+            padding: 55px 40px;
+            position: relative;
+        }
+
+        .abajo img{
+            position: absolute;
+            left: 40px;
+        }
+
+        .menu{
+            display: flex;
+            gap: 20px;
+            margin: 0 auto;
+        }
+
+        .menu a{
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: white;
+            padding: 10px 18px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover{
+            background-color: #ffe4ef;
+            transform: scale(1.05);
+        }
+
+        /* CURSO GRATIS */
+
+        .gratis{
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .gratis h1{
+            font-size: 50px;
+        }
+
+        .gratis p{
+            font-size: 22px;
+        }
+
+        .gratis img{
+            width: 500px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .gratis img:hover{
+            transform: scale(1.02);
+        }
+
+        /* PRODUCTOS */
+
+        .arriba{
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+
+        .producto{
+            background-color: rgb(248, 196, 239);
+            padding: 20px;
+            border-radius: 25px;
+            text-align: center;
+            width: 280px;
+        }
+
+        .producto img{
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .producto h2{
+            font-size: 30px;
+        }
+
+        button{
+            background-color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: pink;
+        }
+
+        /* CARRITO */
+
+        .carrito{
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .item-carrito{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        #total{
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .pagar-btn{
+            width: 100%;
+            margin-top: 20px;
+            background-color: pink;
+        }
+
+        /* FONDO */
+
+        .fondo{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        /* FORMULARIO */
+
+        .formulario{
+            background-color: white;
+            width: 420px;
+            padding: 30px;
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .cerrar{
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .formulario input,
+        .formulario select{
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 15px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .metodoPago{
+            background-color: #ffe4ef;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* FACTURA */
+
+        .factura{
+            display: none;
+            background-color: white;
+            width: 500px;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .factura h1{
+            color: hotpink;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- MENU -->
+
+<div class="abajo">
+
+    <img src="logo-removebg-preview.png" width="145">
+
+    <div class="menu">
+
+        <a href="index.html">Inicio</a>
+        <a href="cursos.html">Cursos</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="contacto.html">Contacto</a>
+
+    </div>
+
+</div>
+
+<!-- CURSO GRATIS -->
+
+<section class="gratis">
+
+    <h1>Curso Gratis de Uñas 💅</h1>
+
+    <p>Haz clic en la imagen para ver el curso</p>
+
+    <a href="https://www.youtube.com/watch?v=ADo08wze0ZI" target="_blank">
+        <img src="https://i.ytimg.com/vi/ADo08wze0ZI/hqdefault.jpg">
+    </a>
+
+</section>
+
+<!-- PRODUCTOS -->
+
+<div class="arriba">
+
+    <div class="producto">
+        <img src="Sweets scrub🍭.jpg">
+        <h2>Exfoliante</h2>
+        <p>Exfolia e hidrata la piel ✨</p>
+        <p>$20.000</p>
+        <button onclick="agregarAlCarrito('Exfoliante',20000)">
+            Agregar al carrito
+        </button>
+    </div>
+
+    <div class="producto">
+        <img src="not your regular candle 🕯️ never hot, our massage candle will give you a warm and smooth massage oil_ discover our 4 fragrances_.jpeg">
+        <h2>Vela Aromática</h2>
+        <p>Relajante y aromática 🕯️</p>
+        <p>$20.000</p>
+        <button onclick="agregarAlCarrito('Vela Aromática',20000)">
+            Agregar al carrito
+        </button>
+    </div>
+
+    <div class="producto">
+        <img src="descarga (1).jpeg">
+        <h2>Curso Profesional</h2>
+        <p>Aprende manicure profesional 💅</p>
+        <p>$120.000</p>
+        <button onclick="agregarAlCarrito('Curso Profesional',120000)">
+            Agregar al carrito
+        </button>
+    </div>
+
+</div>
+
+<!-- CARRITO -->
+
+<div class="carrito">
+
+    <h2>🛒 Carrito</h2>
+
+    <div id="lista-carrito"></div>
+
+    <div id="total">Total: $0</div>
+
+    <button class="pagar-btn" onclick="abrirFormulario()">
+        Ir a pagar
+    </button>
+
+</div>
+
+<!-- FONDO -->
+
+<div class="fondo" id="fondo">
+
+    <div class="formulario" id="formulario">
+
+        <span class="cerrar" onclick="cerrarFormulario()">✕</span>
+
+        <h2>Datos de envío ✨</h2>
+
+        <input type="text" id="nombre" placeholder="Nombre completo">
+        <input type="text" id="direccion" placeholder="Dirección">
+        <input type="text" placeholder="Punto de referencia">
+        <input type="text" placeholder="Número de teléfono">
+
+        <select onchange="mostrarMetodo(this.value)">
+            <option>Selecciona método de pago</option>
+            <option value="nequi">Nequi</option>
+            <option value="pse">PSE</option>
+            <option value="bancolombia">Bancolombia</option>
+        </select>
+
+        <div class="metodoPago" id="metodoPago">
+            Selecciona un método de pago
+        </div>
+
+        <button class="pagar-btn" onclick="finalizarCompra()">
+            Finalizar compra
+        </button>
+
+    </div>
+
+    <div class="factura" id="factura">
+
+        <span class="cerrar" onclick="cerrarFormulario()">✕</span>
+
+        <h1>✅ Compra realizada</h1>
+
+        <h2 id="cliente"></h2>
+        <p id="direccionFactura"></p>
+        <h3 id="totalFactura"></h3>
+
+        <p>📦 Tu pedido llegará máximo en 1 semana.</p>
+        <p>✨ Nos estaremos contactando contigo para confirmar el envío.</p>
+
+    </div>
+
+</div>
+
+<script>
+
+let total = 0;
+
+function agregarAlCarrito(nombre,precio){
+
+    total += precio;
+
+    const lista = document.getElementById('lista-carrito');
+
+    const item = document.createElement('div');
+    item.classList.add('item-carrito');
+
+    item.innerHTML = `
+        <span>${nombre}</span>
+        <span>$${precio}</span>
+    `;
+
+    lista.appendChild(item);
+
+    document.getElementById('total').innerHTML = `Total: $${total}`;
+}
+
+function abrirFormulario(){
+    document.getElementById('fondo').style.display = 'flex';
+}
+
+function cerrarFormulario(){
+    document.getElementById('fondo').style.display = 'none';
+    document.getElementById('formulario').style.display = 'block';
+    document.getElementById('factura').style.display = 'none';
+}
+
+function mostrarMetodo(metodo){
+
+    const caja = document.getElementById('metodoPago');
+
+    if(metodo == 'nequi'){
+        caja.innerHTML = `<h3>Nequi</h3><p>300 123 4567</p>`;
+    }
+
+    else if(metodo == 'pse'){
+        caja.innerHTML = `<h3>PSE</h3><p>Pago virtual disponible</p>`;
+    }
+
+    else if(metodo == 'bancolombia'){
+        caja.innerHTML = `<h3>Bancolombia</h3><p>Cuenta: 123456789</p>`;
+    }
+}
+
+function finalizarCompra(){
+
+    const nombre = document.getElementById('nombre').value;
+    const direccion = document.getElementById('direccion').value;
+
+    document.getElementById('formulario').style.display = 'none';
+    document.getElementById('factura').style.display = 'block';
+
+    document.getElementById('cliente').innerHTML = nombre;
+    document.getElementById('direccionFactura').innerHTML = `📍 Dirección: ${direccion}`;
+    document.getElementById('totalFactura').innerHTML = `💰 Total pagado: $${total}`;
+}
+
+</script>
+
+</body>
+</html>

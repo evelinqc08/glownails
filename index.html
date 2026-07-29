@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Nails</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #ffe6f0, #ffffff);
+}
+
+/* HEADER */
+.header {
+  background: #f8c8dc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 15px;
+}
+
+.menu a {
+  background: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.menu a:hover {
+  background: #ff69b4;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* USUARIO / BOTONES */
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.acciones a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.acciones a:hover {
+  background: #ff69b4;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.user-btn {
+  background: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 100px;
+  gap: 40px;
+}
+
+.hero h1 {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #444;
+}
+
+.hero img {
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  background: #ff69b4;
+}
+
+/* SECCIONES */
+.section {
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.card {
+  display: inline-block;
+  background: white;
+  padding: 25px;
+  margin: 15px;
+  border-radius: 18px;
+  width: 200px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+
+  <div class="logo">💅 Glow Nails</div>
+
+  <div class="menu">
+    <a href="#">Inicio</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+
+  <div id="userArea" class="acciones"></div>
+
+</div>
+
+<!-- HERO -->
+<div class="hero">
+
+  <div>
+    <h1>Aprende uñas desde cero 💅</h1>
+    <p>Empieza tu negocio desde casa</p>
+    <a href="cursos.html" class="boton">Ver cursos</a>
+  </div>
+
+  <div>
+    <img src="uñas.jpeg" width="420">
+  </div>
+
+</div>
+
+<!-- CURSOS -->
+<div class="section">
+  <h2>Cursos gratuitos</h2>
+
+  <div class="card">Básico de uñas</div>
+  <div class="card">Diseños creativos</div>
+  <div class="card">Acrílico profesional</div>
+</div>
+
+<!-- QUIÉNES SOMOS -->
+<div class="section" style="background:#fff0f6;">
+  <h2>¿Quiénes somos?</h2>
+  <p>Glow Nails es una academia para aprender uñas desde cero.</p>
+</div>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('loginModal')">❌</span>
+    <h3>Iniciar sesión</h3>
+
+    <input id="loginUser" placeholder="Usuario">
+    <input id="loginPass" type="password" placeholder="Contraseña">
+
+    <button onclick="login()">Entrar</button>
+
+    <p onclick="openModal('registerModal')" style="cursor:pointer;color:blue;">
+      Crear cuenta
+    </p>
+  </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('registerModal')">❌</span>
+    <h3>Registro</h3>
+
+    <input id="regUser" placeholder="Usuario">
+    <input id="regPass" type="password" placeholder="Contraseña">
+
+    <button onclick="register()">Crear cuenta</button>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function openModal(id){
+  document.getElementById(id).style.display = "flex";
+}
+
+function closeModal(id){
+  document.getElementById(id).style.display = "none";
+}
+
+/* REGISTRO */
+function register(){
+  let u = document.getElementById("regUser").value;
+  let p = document.getElementById("regPass").value;
+
+  localStorage.setItem("user_" + u, p);
+
+  alert("Cuenta creada 💅");
+  closeModal("registerModal");
+  openModal("loginModal");
+}
+
+/* LOGIN */
+function login(){
+  let u = document.getElementById("loginUser").value;
+  let p = document.getElementById("loginPass").value;
+
+  let saved = localStorage.getItem("user_" + u);
+
+  if(saved === p){
+    localStorage.setItem("loggedUser", u);
+    updateUser();
+    closeModal("loginModal");
+  } else {
+    alert("Datos incorrectos");
+  }
+}
+
+/* USUARIO (PERSISTENTE) */
+function updateUser(){
+  let u = localStorage.getItem("loggedUser");
+  let box = document.getElementById("userArea");
+
+  if(u){
+    box.innerHTML = `
+      <div class="user-btn">
+        👤 ${u}
+        <span onclick="logout()" style="margin-left:10px;cursor:pointer;">❌</span>
+      </div>
+    `;
+  } else {
+    box.innerHTML = `
+      <a href="#" onclick="openModal('loginModal')">Iniciar sesión</a>
+      <a href="#" onclick="openModal('registerModal')">Registrarse</a>
+    `;
+  }
+}
+
+/* LOGOUT */
+function logout(){
+  localStorage.removeItem("loggedUser");
+  updateUser();
+}
+
+/* NO SE PIERDE AL RECARGAR */
+window.onload = function(){
+  updateUser();
+};
+</script>
+
+</body>
+</html>
